@@ -1,0 +1,276 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #0ff0fc;
+  --gradient: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  --bg: #0e0e2c;
+  --text: #ffffff;
+  --card-bg: #1e1e3f;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(14, 14, 44, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 8%;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+header .logo {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--primary);
+  letter-spacing: 2px;
+}
+
+header .navbar a {
+  font-size: 1.6rem;
+  margin-left: 2rem;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+header .navbar a:hover {
+  color: var(--primary);
+}
+
+#menu-bar {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--text);
+  display: none;
+}
+
+header .icons a {
+  color: var(--text);
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 12rem 8% 6rem;
+  gap: 4rem;
+  background: radial-gradient(circle, #0e0e2c 60%, #000000 100%);
+}
+
+.home .content {
+  flex: 1 1 40rem;
+}
+
+.home .content h1 {
+  font-size: 4.5rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.home .content p {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.6rem;
+  border-radius: 50px;
+  background: var(--gradient);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2);
+}
+
+.home .image {
+  flex: 1 1 40rem;
+  text-align: center;
+}
+
+.home .image img {
+  width: 100%;
+  max-width: 500px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Section Heading */
+.heading {
+  text-align: center;
+  font-size: 3.5rem;
+  padding: 3rem 0;
+}
+
+.heading span {
+  color: var(--primary);
+}
+
+/* Box Sections */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+  padding: 2rem 8%;
+}
+
+.box {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1);
+}
+
+.box i {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.box h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.box p {
+  font-size: 1.4rem;
+  color: #bbb;
+}
+
+/* Timeline / Roadmap */
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.milestone {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-left: 5px solid var(--primary);
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+.milestone h3 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.milestone p {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* Contact Form */
+.contact form {
+  max-width: 600px;
+  margin: auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact form .box,
+.contact form textarea {
+  background: var(--card-bg);
+  color: var(--text);
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  resize: none;
+}
+
+.contact form input[type="submit"] {
+  background: var(--gradient);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.4rem;
+  background: #0a0a23;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #menu-bar {
+    display: block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg);
+    width: 100%;
+    display: none;
+    flex-direction: column;
+  }
+
+  header .navbar.active {
+    display: flex;
+  }
+
+  header .navbar a {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-top: 1px solid #222;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .image {
+    margin-top: 3rem;
+  }
+}
